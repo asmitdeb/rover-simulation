@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robotic_arm_moveit_model_urdf">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-4.5103E-17 -2.7756E-17 0.0090027"
+        rpy="0 0 0" />
+      <mass
+        value="0.84071" />
+      <inertia
+        ixx="0.0030035"
+        ixy="7.7611E-20"
+        ixz="-4.4384E-21"
+        iyy="0.003245"
+        iyz="-1.8889E-21"
+        izz="0.0062462" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_simulation/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_simulation/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="rotating arm base link">
+    <inertial>
+      <origin
+        xyz="0.00097977 7.9073E-07 0.04556"
+        rpy="0 0 0" />
+      <mass
+        value="1.2987" />
+      <inertia
+        ixx="0.0016527"
+        ixy="-2.2085E-07"
+        ixz="-0.00019296"
+        iyy="0.0019275"
+        iyz="-1.5515E-07"
+        izz="0.0028404" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_simulation/meshes/rotating_arm_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_simulation/meshes/rotating_arm_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rotating arm base joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rotating arm base link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="3.142"
+      effort="21"
+      velocity="0.392" />
+    <dynamics
+      friction="0.2" />
+  </joint>
+  <link
+    name="Arm Base Link">
+    <inertial>
+      <origin
+        xyz="1.8869E-05 -0.022632 0.1943"
+        rpy="0 0 0" />
+      <mass
+        value="0.10461" />
+      <inertia
+        ixx="0.00055894"
+        ixy="2.4418E-08"
+        ixz="-9.6948E-08"
+        iyy="0.00052884"
+        iyz="0.00012039"
+        izz="6.7389E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_simulation/meshes/Arm_Base_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_simulation/meshes/Arm_Base_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Arm Base Joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="rotating arm base link" />
+    <child
+      link="Arm Base Link" />
+    <axis
+      xyz="1 0.000804 0" />
+    <limit
+      lower="-0.26"
+      upper="1.134"
+      effort="24.5"
+      velocity="0.4" />
+    <dynamics
+      friction="0.2" />
+  </joint>
+  <link
+    name="Elbow Link">
+    <inertial>
+      <origin
+        xyz="-8.2001E-05 0.10267 0.30226"
+        rpy="0 0 0" />
+      <mass
+        value="0.13881" />
+      <inertia
+        ixx="0.0012727"
+        ixy="9.0606E-07"
+        ixz="-2.6342E-07"
+        iyy="0.00014547"
+        iyz="0.00032754"
+        izz="0.001177" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_simulation/meshes/Elbow_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_simulation/meshes/Elbow_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Elbow Joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Arm Base Link" />
+    <child
+      link="Elbow Link" />
+    <axis
+      xyz="-1 -0.000804 0" />
+    <limit
+      lower="-0.6981"
+      upper="0.6981"
+      effort="14.71"
+      velocity="4" />
+    <dynamics
+      friction="0.2" />
+  </joint>
+  <link
+    name="Gripper Link">
+    <inertial>
+      <origin
+        xyz="-0.00022643 0.28163 0.23007"
+        rpy="0 0 0" />
+      <mass
+        value="0.15008" />
+      <inertia
+        ixx="7.2706E-05"
+        ixy="-1.57E-08"
+        ixz="3.8828E-09"
+        iyy="9.2234E-05"
+        iyz="-4.8293E-06"
+        izz="6.6802E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_simulation/meshes/Gripper_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.58824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_simulation/meshes/Gripper_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Gripper Joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Elbow Link" />
+    <child
+      link="Gripper Link" />
+    <axis
+      xyz="1 0.000804 0" />
+    <limit
+      lower="-3.142"
+      upper="0"
+      effort="7.845"
+      velocity="4" />
+    <dynamics
+      friction="0.2" />
+  </joint>
+  <link
+    name="Rotating Gripper Link">
+    <inertial>
+      <origin
+        xyz="0.00020316 0.28586 0.16892"
+        rpy="0 0 0" />
+      <mass
+        value="0.18525" />
+      <inertia
+        ixx="0.00015963"
+        ixy="1.4171E-06"
+        ixz="4.0205E-06"
+        iyy="0.00015219"
+        iyz="2.0393E-05"
+        izz="0.00024539" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_simulation/meshes/Rotating_Gripper_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.56863 0.59608 0.62353 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_simulation/meshes/Rotating_Gripper_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rotating Gripper Joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Gripper Link" />
+    <child
+      link="Rotating Gripper Link" />
+    <axis
+      xyz="-0.00014511 0.18049 0.98358" />
+    <limit
+      lower="0"
+      upper="3.142"
+      effort="4.903"
+      velocity="3" />
+    <dynamics
+      friction="0.2" />
+  </joint>
+  <link
+    name="End Effector 1">
+    <inertial>
+      <origin
+        xyz="0.039774 0.25596 0.12811"
+        rpy="0 0 0" />
+      <mass
+        value="0.15938" />
+      <inertia
+        ixx="0.00028955"
+        ixy="-2.3E-05"
+        ixz="-0.00013963"
+        iyy="0.00037553"
+        iyz="-3.8084E-05"
+        izz="0.00015271" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_simulation/meshes/End_Effector_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_simulation/meshes/End_Effector_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="End Effector Joint 1"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Rotating Gripper Link" />
+    <child
+      link="End Effector 1" />
+    <axis
+      xyz="-0.99962 0.027215 -0.0051415" />
+    <limit
+      lower="0"
+      upper="0.06"
+      effort="0.98"
+      velocity="0.01" />
+    <dynamics
+      friction="0.2" />
+  </joint>
+  <link
+    name="End Effector 2">
+    <inertial>
+      <origin
+        xyz="-0.045713 0.25829 0.12767"
+        rpy="0 0 0" />
+      <mass
+        value="0.15938" />
+      <inertia
+        ixx="0.00028947"
+        ixy="2.8041E-05"
+        ixz="0.00013875"
+        iyy="0.00037275"
+        iyz="-4.54E-05"
+        izz="0.00015557" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_simulation/meshes/End_Effector_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_simulation/meshes/End_Effector_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="End effector Joint 2"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Rotating Gripper Link" />
+    <child
+      link="End Effector 2" />
+    <axis
+      xyz="-0.99962 0.027215 -0.0051415" />
+    <limit
+      lower="0"
+      upper="-0.06"
+      effort="0.98"
+      velocity="0.01" />
+    <dynamics
+      friction="0.2" />
+  </joint>
+</robot>
